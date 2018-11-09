@@ -26,7 +26,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class UserInfoActivity extends AppCompatActivity {
-    private String url="http://118.31.46.177/index.php/Home/AndroidShop/";
+    private String url="http://panhe-tech.cn/index.php/Home/AndroidShop/";
     private GitHubService service;
     private ListView lv_photos_info;
     private PhotoInfoAdapter photoInfoAdapter;
