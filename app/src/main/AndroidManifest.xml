@@ -72,6 +72,9 @@
         <activity
             android:name=".UpdateActivity"
             android:label="@string/title_activity_update"/>
+        <activity
+            android:name=".FirmwareInfoActivity"
+            android:label="FirmwareInfoActivity"/>
     </application>
 
 </manifest>

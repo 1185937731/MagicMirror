@@ -296,7 +296,7 @@ public  class MainActivity extends AppCompatActivity {
         updateButton.setEnabled(true);
         updateButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this, UpdateActivity.class);
+                Intent intent = new Intent(MainActivity.this, FirmwareInfoActivity.class);
                 startActivity(intent);
             }
         });
@@ -642,7 +642,7 @@ public  class MainActivity extends AppCompatActivity {
                     public void onResponse(Call<PhotoMessage> call, retrofit2.Response<PhotoMessage> response) {
                         System.out.println("访问成功");
                         PhotoMessage data = response.body();
-                        System.out.println("wwwww"+data.getResult());
+                        System.out.println("wwww"+data.getResult());
                         Gson gson = new Gson();
                         ResultInfo result = new ResultInfo();
                         String jason = data.getResult();

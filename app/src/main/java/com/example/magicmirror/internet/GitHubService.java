@@ -1,5 +1,7 @@
 package com.example.magicmirror.internet;
 
+import com.example.magicmirror.bean.FirmWare;
+import com.example.magicmirror.bean.FirmWareInfo;
 import com.example.magicmirror.bean.Login;
 import com.example.magicmirror.bean.PhotoMessage;
 import com.example.magicmirror.bean.PhotoResult;
@@ -56,5 +58,10 @@ public interface GitHubService{
     @POST("AndroidShopClientPhotoGet/")//获取某一客户在家拍照的结果
     Call<PhotoResult> AndroidShopClientPhotoGet(
             @Field("username") String username);
+
+    @FormUrlEncoded
+    @POST("AndroidFirmWareInfoGet/")//获取固件
+    Call<FirmWareInfo> AndroidFirmWareInfoGet(
+            @Field("1") String askFirm);
 
 }

@@ -38,33 +38,32 @@
             android:background="@drawable/textview_border" />
 
 
-
         <TextView
             android:id="@+id/updateNote"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/textview_border"
             android:editable="false"
             android:text="注意：\n升级过程中镜子请勿断电，请保持手机和镜子的wifi信号良好；\n升级完成后镜子将自动重启！"
-            android:textColor="#34495E"
-            android:background="@drawable/textview_border" />
+            android:textColor="#34495E" />
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:weightSum="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="1">
 
-                <Button
-                    android:id="@+id/start"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
+            <Button
+                android:id="@+id/start"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
 
-                    android:text="开始"
-                    android:textColor="#34495E"
-                    android:textSize="16sp" />
+                android:text="开始"
+                android:textColor="#34495E"
+                android:textSize="16sp" />
 
-            </LinearLayout>  
+        </LinearLayout>  
 
     </LinearLayout>
 </RelativeLayout>
