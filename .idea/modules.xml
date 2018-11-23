@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MagicMirror_11.08.iml" filepath="$PROJECT_DIR$/MagicMirror_11.08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MagicMirror.iml" filepath="$PROJECT_DIR$/MagicMirror.iml" />
       <module fileurl="file://$PROJECT_DIR$/StepView/StepView.iml" filepath="$PROJECT_DIR$/StepView/StepView.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
