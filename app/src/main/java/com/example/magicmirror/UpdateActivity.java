@@ -10,14 +10,13 @@ import android.app.Activity;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 public class UpdateActivity extends Activity {
+
     private Button start;
     private TextView infoText;
     private boolean firstUpdateTime;
@@ -37,6 +36,7 @@ public class UpdateActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
+        System.out.println("下载函数");
 
         infoText = (TextView)findViewById(R.id.updateInfo);
         /*infoText2 = (TextView)findViewById(R.id.updateInfo2);
@@ -102,6 +102,7 @@ public class UpdateActivity extends Activity {
         start = (Button)findViewById(R.id.start);
         start.setBackgroundColor(Color.parseColor("#ffc0cb"));
         start.setEnabled(true);
+
         start.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 start.setEnabled(false);
@@ -121,6 +122,7 @@ public class UpdateActivity extends Activity {
             }
         });
     }
+
 
 
     BroadcastReceiver broadcastReceiver = new BroadcastReceiver(){
@@ -261,4 +263,9 @@ public class UpdateActivity extends Activity {
         Log.e(TAG,"onBackPressed!");
     }
 
-}
+
+
+
+
+
+    }

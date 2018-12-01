@@ -43,13 +43,18 @@ import com.example.magicmirror.bean.WifiAdmin;
 import com.example.magicmirror.internet.GitHubService;
 import com.google.gson.Gson;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -63,6 +68,7 @@ import static java.lang.Thread.sleep;
 
 public  class MainActivity extends AppCompatActivity {
     public final static String url="http://panhe-tech.cn/index.php/Home/Android/";
+    public String path="/storage/emulated/0/MyDownLoad/full.jpg";
     private long exitTime = 0;
     private Context mContext;
     private GitHubService service;
@@ -80,6 +86,7 @@ public  class MainActivity extends AppCompatActivity {
     private Button sendButton;
     private Button bond;
     private Button wifiConfig;
+//    private Button btn_upload;
 //    private TextView recevie;
     private Button bt_refresh;
     private Button bt_history;
@@ -300,6 +307,17 @@ public  class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+//        btn_upload=(Button)findViewById(R.id.bt_upload);
+//        btn_upload.setEnabled(true);
+//        btn_upload.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onload(path);
+//            }
+//        });
+
+
 
         bond = (Button)findViewById(R.id.bond);
         bond.setBackgroundColor(Color.parseColor("#ffc0cb"));
@@ -617,7 +635,9 @@ public  class MainActivity extends AppCompatActivity {
                 /*yanghaishan add,20180724*/
                 if(isDoingConfigWifi || isDoingBind)
                 {
-                    android.support.v7.app.AlertDialog.Builder builder3 = new android.support.v7.app.AlertDialog.Builder(MainActivity.this).setTitle("提示信息").setMessage("正在进行配网或绑定设备，请稍后再查看拍照结果！");
+                    android.support.v7.app.AlertDialog.Builder builder3 = new
+                            android.support.v7.app.AlertDialog.Builder(MainActivity.this).
+                            setTitle("提示信息").setMessage("正在进行配网或绑定设备，请稍后再查看拍照结果！");
                     builder3.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -769,6 +789,56 @@ public  class MainActivity extends AppCompatActivity {
             //bond.setBackgroundColor(Color.parseColor("#ffc0cb"));
         }
     };
+
+//上传硬件
+//    public void onload(String filename){
+////        System.out.println("上传" );
+////        // create upload service client
+////
+////        // https://github.com/iPaulPro/aFileChooser/blob/master/aFileChooser/src/com/ipaulpro/afilechooser/utils/FileUtils.java
+////        // use the FileUtils to get the actual file by uri
+////        File file = new File(filename);
+////
+////        // create RequestBody instance from file
+////        RequestBody requestFile =
+////                RequestBody.create(MediaType.parse("multipart/form-data"), file);
+////
+////        // MultipartBody.Part is used to send also the actual file name
+////        MultipartBody.Part body =
+////                MultipartBody.Part.createFormData("firm001", file.getName(), requestFile);
+////
+////        // add another part within the multipart request
+////
+////        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss");// HH:mm:ss
+//////获取当前时间
+////        Date date = new Date(System.currentTimeMillis());
+////        String timeString=simpleDateFormat.format(date);
+////        System.out.println("上传时间 "+timeString );
+////        RequestBody time =RequestBody.create(
+////                MediaType.parse("multipart/form-data"), timeString);
+////        // finally, execute the request
+////        Call<ResponseBody> call = service.upload(time,body);
+////        call.enqueue(new Callback<ResponseBody>() {
+////            @Override
+////            public void onResponse(Call<ResponseBody> call,
+////                                   Response<ResponseBody> response) {
+////
+////                System.out.println("upload success");
+////                Log.v("Upload", "success");
+////            }
+////
+////            @Override
+////            public void onFailure(Call<ResponseBody> call, Throwable t) {
+////                t.printStackTrace();
+////                System.out.println("upload error");
+////                Log.e("Upload error:", t.getMessage());
+////            }
+////        });
+
+//    }
+
+
+
 
     public void updateCallback(int status,int time)
     {

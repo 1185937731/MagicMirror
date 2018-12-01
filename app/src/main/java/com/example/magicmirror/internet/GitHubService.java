@@ -15,9 +15,13 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
+import retrofit2.http.Query;
+import retrofit2.http.Streaming;
+import retrofit2.http.Url;
 
 
 public interface GitHubService{
@@ -45,6 +49,21 @@ public interface GitHubService{
     Call<ResponseBody> AndroidGetPhoto(
             @Field("address") String address);
 
+
+    @FormUrlEncoded
+    @Streaming
+    @POST("AndroidGetFirm/") //获取硬件版本信息
+    Call<ResponseBody>AndroidGetFirm(
+            @Field("address")String address
+    );
+
+//    @Multipart
+//    @POST("FirmUpload") //提交硬件
+//    Call<ResponseBody> upload(@Part("time") RequestBody time,
+//                         @Part MultipartBody.Part file
+//                        );
+
+
     @Multipart
     @POST("PiUpload/")//注册
     Call<String> PiUpload(
@@ -59,9 +78,15 @@ public interface GitHubService{
     Call<PhotoResult> AndroidShopClientPhotoGet(
             @Field("username") String username);
 
+
     @FormUrlEncoded
     @POST("AndroidFirmWareInfoGet/")//获取固件
     Call<FirmWareInfo> AndroidFirmWareInfoGet(
             @Field("1") String askFirm);
+
+    @Streaming
+    @GET("AndroidGetFirm/") //获取硬件版本信息
+    Call<ResponseBody> AndroidgetFirm(
+            @Query("address") String address);
 
 }

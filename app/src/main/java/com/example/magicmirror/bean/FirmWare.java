@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class FirmWare {
     private String version_number;
     private String version_name;
-    private String path;
+    private String pathAdd;
 
     public FirmWare(String version, String name) {
         this.version_number = version;
@@ -29,4 +29,11 @@ public class FirmWare {
         this.version_name = version_name;
     }
 
+    public String getPathAdd() {
+        return pathAdd;
+    }
+
+    public void setPathAdd(String pathAdd) {
+        this.pathAdd = pathAdd;
+    }
 }
